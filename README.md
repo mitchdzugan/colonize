@@ -127,12 +127,13 @@ Now lets setup the seeding. If you'r using Mocha: create a file that is required
 const colonize = require('colonize')
 const path = require('path')
 const pkg = require('./package')
+const seeding = require('./test/seeding')
 
 const mongoUrl = 'mongodb://127.0.0.1:27017/${pkg.name}-test'
 
 const colonization = colonize.initialize({
   mongoUrl,
-  seedingPath: path.resolve(__dirname, './test/seeding'),
+  seeding,
 
   // Connection whitelist is important, it's a list of allowed connections (this is to double check we're not seeding / dropping a live database)
   connectionWhitelist: [

@@ -2,6 +2,7 @@ const path = require('path')
 const expect = require('expect')
 const colonize = require('../index')
 const connectionUrl = 'mongodb://localhost:27017/colonize-test'
+const seeding = require('./seeding')
 
 describe('Colonize', () => {
   let _colonization = null
@@ -17,7 +18,7 @@ describe('Colonize', () => {
         connectionUrl
       ],
       dropDatabase: false,
-      seedingPath: path.resolve(__dirname, './seeding')
+      seeding
     })
 
     expect(_colonization).toHaveProperty('seed')

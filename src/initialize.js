@@ -4,7 +4,7 @@ const debug = require('debug')('colonize')
 const initialize = ({
   mongoUrl,
   mongooseConnectOptions,
-  seedingPath,
+  seeding,
   dropDatabase = true,
   connectionWhitelist
 }) => {
@@ -70,9 +70,6 @@ const initialize = ({
     if (dropDatabase) {
       await drop()
     }
-
-    const seeding = require(seedingPath)
-    debug(`Loaded seeding directory: '${seedingPath}'`)
 
     if (!Array.isArray(seeding)) {
       throw new Error('Seeding main file file did not export an array')

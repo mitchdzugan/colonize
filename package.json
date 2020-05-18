@@ -1,5 +1,5 @@
 {
-  "name": "colonize",
+  "name": "colonize-no-require",
   "version": "1.0.4",
   "description": "Scalable Mongoose seeding",
   "repository": {
